@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Import Puff Data", "Import Puff Data.dtproj", "{591435EC-BF63-491E-A204-F9AA809FC1D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Deployment|Default = Deployment|Default
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{591435EC-BF63-491E-A204-F9AA809FC1D8}.Deployment|Default.ActiveCfg = Deployment
+		{591435EC-BF63-491E-A204-F9AA809FC1D8}.Deployment|Default.Build.0 = Deployment
+		{591435EC-BF63-491E-A204-F9AA809FC1D8}.Development|Default.ActiveCfg = Development
+		{591435EC-BF63-491E-A204-F9AA809FC1D8}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23B9A37F-1D80-44AE-A0E5-3414835B654C}
+	EndGlobalSection
+EndGlobal

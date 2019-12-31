@@ -1,0 +1,1376 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/17/2019 10:28:06 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SPECTRE"
+  DTS:CreatorName="SPECTRE\n5014"
+  DTS:DTSID="{0A83FE57-4D66-4AC0-B3A8-46405FB21749}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1900.80"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Import Puff Data"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{DC877114-AFBA-4205-A941-D6340BD2720C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[All Puff CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FE386DA5-0297-4ECC-999B-71D31D60CFA3}"
+      DTS:ObjectName="All Puff CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\ciervo1\temp\All Puffs.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Puff"
+              DTS:DTSID="{CCBB0848-72BD-4391-9017-5832409C70EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date Time"
+              DTS:DTSID="{3CCF2298-EDA7-47F5-886B-DF0008DA9B3D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time (s)"
+              DTS:DTSID="{095A4C12-F30C-4B77-B07B-EE7105C27D35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Energy (mWh)"
+              DTS:DTSID="{9AC5575F-8F4F-4BEB-B395-D6D59C1EF5A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Power (W)"
+              DTS:DTSID="{09DFA33E-7D9D-4D0B-8323-F1E0492E0F1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Power Set (W)"
+              DTS:DTSID="{577E52B3-B634-4CF6-AB87-16FBE9644982}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cold Ohms"
+              DTS:DTSID="{86A7D548-0CC4-42A5-A7AD-C1DDE76D44AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cold Temp (degF)"
+              DTS:DTSID="{8A8F2620-0DDD-47C5-BDB7-B23AC6A1AF47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mod Resistance"
+              DTS:DTSID="{FB1CF655-0E76-4A39-857A-D99E897B4D5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Room Temp"
+              DTS:DTSID="{03AD6D61-FC16-4EFB-9EE0-FCFC7E6F9F70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Board Temp"
+              DTS:DTSID="{BB1BF3AB-0E35-44B5-B3DA-AF44C87C5779}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Snapshot Ohms"
+              DTS:DTSID="{C02140CB-2D6C-44AB-AAC3-E0BC8B5FCD2B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4EEBC72C-A4B8-41CE-9963-F78BF446BA44}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CIERVO1;User ID=chris;Initial Catalog=Bills;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASmiLCSIh00i5Ct8V3DvCUwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA9r7Hyy7MRkMk0XCCGKRTi/heIO/9IajXREZyXa9f6fAAAAAAOgAAAAAIAACAAAACKigyt9gnxuXNcuvrjILr4+dfYuQjlTr206fvKRjyAwRAAAADCWIfkR1xFs2/OmxrI02JfQAAAAEj6r+g5ZmtsllthNVRLH8mwq/oTZmWyd14Ukzt5sAyC7dl8uVustgzMfTrwDupTcEKL90tSD605ZRX/fgc0Wuc</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{CE883539-BDA3-419C-A0EA-657D07A7E939}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Create Puff_Staging"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{7E326A55-A1F0-404F-881C-4C872D27D14F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create Puff_Staging"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4EEBC72C-A4B8-41CE-9963-F78BF446BA44}"
+              SQLTask:SqlStatementSource="EXECUTE [dbo].[MakePuffStagingTable] &#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import CSV Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DTSID="{FE402ECC-1AA3-4016-8676-4FFFA5D85DD6}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:FailPackageOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import CSV Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              defaultBufferSize="3145728"
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion 0 - 0"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Date Time]"
+                          cachedDataType="date"
+                          cachedName="Date Time"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Date Time]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Time (s)]"
+                          cachedDataType="r4"
+                          cachedName="Time (s)"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Time (s)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Energy (mWh)]"
+                          cachedDataType="r4"
+                          cachedName="Energy (mWh)"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Energy (mWh)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Power (W)]"
+                          cachedDataType="r4"
+                          cachedName="Power (W)"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Power (W)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Power Set (W)]"
+                          cachedDataType="i1"
+                          cachedName="Power Set (W)"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Power Set (W)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Cold Ohms]"
+                          cachedDataType="r4"
+                          cachedName="Cold Ohms"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Cold Ohms]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Cold Temp (degF)]"
+                          cachedDataType="r4"
+                          cachedName="Cold Temp (degF)"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Cold Temp (degF)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Mod Resistance]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="Mod Resistance"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Mod Resistance]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Room Temp]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="Room Temp"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Room Temp]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Board Temp]"
+                          cachedDataType="r4"
+                          cachedName="Board Temp"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Board Temp]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Snapshot Ohms]"
+                          cachedDataType="r4"
+                          cachedName="Snapshot Ohms"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Snapshot Ohms]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Date Time]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Date Time]"
+                          name="Date Time"
+                          scale="7"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Date Time]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Time (s)]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Time (s)]"
+                          name="Time (s)"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Time (s)]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Energy (mWh)]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Energy (mWh)]"
+                          name="Energy (mWh)"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Energy (mWh)]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Power (W)]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Power (W)]"
+                          name="Power (W)"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Power (W)]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Power Set (W)]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Power Set (W)]"
+                          name="Power Set (W)"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Power Set (W)]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Cold Ohms]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Cold Ohms]"
+                          name="Cold Ohms"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Cold Ohms]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Cold Temp (degF)]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Cold Temp (degF)]"
+                          name="Cold Temp (degF)"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Cold Temp (degF)]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Mod Resistance]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          length="1"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Mod Resistance]"
+                          name="Mod Resistance"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Mod Resistance]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Room Temp]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          length="1"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Room Temp]"
+                          name="Room Temp"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Room Temp]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Board Temp]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Board Temp]"
+                          name="Board Temp"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Board Temp]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Snapshot Ohms]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Snapshot Ohms]"
+                          name="Snapshot Ohms"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Snapshot Ohms]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Destination - Puff_Staging"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Puff_Staging]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Puff]"
+                          cachedDataType="i2"
+                          cachedName="Puff"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Puff]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Puff]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Date Time]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="Date Time"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Date_Time]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Date Time]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Time (s)]"
+                          cachedDataType="r8"
+                          cachedName="Time (s)"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Time_s]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Time (s)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Energy (mWh)]"
+                          cachedDataType="r8"
+                          cachedName="Energy (mWh)"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Energy_mWh]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Energy (mWh)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Power (W)]"
+                          cachedDataType="r8"
+                          cachedName="Power (W)"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Power_W]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Power (W)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Power Set (W)]"
+                          cachedDataType="ui1"
+                          cachedName="Power Set (W)"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Power_Set_W]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Power Set (W)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Cold Ohms]"
+                          cachedDataType="r8"
+                          cachedName="Cold Ohms"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Cold_Ohms]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Cold Ohms]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Cold Temp (degF)]"
+                          cachedDataType="r8"
+                          cachedName="Cold Temp (degF)"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Cold_Temp_degF]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Cold Temp (degF)]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Mod Resistance]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="Mod Resistance"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Mod_Resistance]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Mod Resistance]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Room Temp]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="Room Temp"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Room_Temp]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Room Temp]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Board Temp]"
+                          cachedDataType="r8"
+                          cachedName="Board Temp"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Board_Temp]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Board Temp]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].Columns[Snapshot Ohms]"
+                          cachedDataType="r8"
+                          cachedName="Snapshot Ohms"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Snapshot_Ohms]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Snapshot Ohms]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Puff]"
+                          dataType="i2"
+                          name="Puff" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Date_Time]"
+                          dataType="dbTimeStamp2"
+                          name="Date_Time"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Time_s]"
+                          dataType="r8"
+                          name="Time_s" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Energy_mWh]"
+                          dataType="r8"
+                          name="Energy_mWh" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Power_W]"
+                          dataType="r8"
+                          name="Power_W" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Power_Set_W]"
+                          dataType="ui1"
+                          name="Power_Set_W" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Cold_Ohms]"
+                          dataType="r8"
+                          name="Cold_Ohms" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Cold_Temp_degF]"
+                          dataType="r8"
+                          name="Cold_Temp_degF" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Mod_Resistance]"
+                          dataType="wstr"
+                          length="1"
+                          name="Mod_Resistance" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Room_Temp]"
+                          dataType="wstr"
+                          length="1"
+                          name="Room_Temp" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Board_Temp]"
+                          dataType="r8"
+                          name="Board_Temp" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input].ExternalColumns[Snapshot_Ohms]"
+                          dataType="r8"
+                          name="Snapshot_Ohms" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Source - All Puffs_csv"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[All Puff CSV]"
+                      connectionManagerRefId="Package.ConnectionManagers[All Puff CSV]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Puff]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Puff]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Puff]"
+                          name="Puff"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Date Time]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Date Time]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Date Time]"
+                          name="Date Time"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Time (s)]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Time (s)]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Time (s)]"
+                          name="Time (s)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Energy (mWh)]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Energy (mWh)]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Energy (mWh)]"
+                          name="Energy (mWh)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Power (W)]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Power (W)]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Power (W)]"
+                          name="Power (W)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Power Set (W)]"
+                          dataType="i1"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Power Set (W)]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Power Set (W)]"
+                          name="Power Set (W)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Cold Ohms]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Cold Ohms]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Cold Ohms]"
+                          name="Cold Ohms"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Cold Temp (degF)]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Cold Temp (degF)]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Cold Temp (degF)]"
+                          name="Cold Temp (degF)"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Mod Resistance]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Mod Resistance]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Mod Resistance]"
+                          name="Mod Resistance"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Room Temp]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Room Temp]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Room Temp]"
+                          name="Room Temp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Board Temp]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Board Temp]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Board Temp]"
+                          name="Board Temp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Snapshot Ohms]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Snapshot Ohms]"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].Columns[Snapshot Ohms]"
+                          name="Snapshot Ohms"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Puff]"
+                          dataType="i2"
+                          name="Puff" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Date Time]"
+                          dataType="date"
+                          name="Date Time" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Time (s)]"
+                          dataType="r4"
+                          name="Time (s)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Energy (mWh)]"
+                          dataType="r4"
+                          name="Energy (mWh)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Power (W)]"
+                          dataType="r4"
+                          name="Power (W)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Power Set (W)]"
+                          dataType="i1"
+                          name="Power Set (W)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Cold Ohms]"
+                          dataType="r4"
+                          name="Cold Ohms" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Cold Temp (degF)]"
+                          dataType="r4"
+                          name="Cold Temp (degF)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Mod Resistance]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="Mod Resistance" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Room Temp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="Room Temp" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Board Temp]"
+                          dataType="r4"
+                          name="Board Temp" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output].ExternalColumns[Snapshot Ohms]"
+                          dataType="r4"
+                          name="Snapshot Ohms" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import CSV Data.Paths[Data Conversion Output]"
+                  endId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Inputs[Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\Import CSV Data.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import New Rows"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{02321368-9E5A-4ED2-ACA0-1A1840341242}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import New Rows"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4EEBC72C-A4B8-41CE-9963-F78BF446BA44}"
+              SQLTask:SqlStatementSource="USE [Bills]&#xA;GO&#xA;EXECUTE [dbo].[ImportNewPuffData] &#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Truncate Puff_Staging"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{C3884212-3DBF-4E2D-A7E6-BD2BEE650CB4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:FailPackageOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Puff_Staging"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4EEBC72C-A4B8-41CE-9963-F78BF446BA44}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[Puff_Staging]&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{6EA50036-274D-41DC-AC5B-0DD48A416E33}"
+          DTS:From="Package\Sequence Container\Import CSV Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Import New Rows" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{A9FBD226-A42D-4AB1-9883-E8732D233723}"
+          DTS:From="Package\Sequence Container\Create Puff_Staging"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Truncate Puff_Staging" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[{2E221E59-EA12-42AE-BE51-D6B9D93E1A9D\}]"
+          DTS:CreationName=""
+          DTS:DTSID="{2E221E59-EA12-42AE-BE51-D6B9D93E1A9D}"
+          DTS:From="Package\Sequence Container\Truncate Puff_Staging"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="{2E221E59-EA12-42AE-BE51-D6B9D93E1A9D}"
+          DTS:To="Package\Sequence Container\Import CSV Data" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="145,43"
+          Id="Package\Sequence Container\Create Puff_Staging"
+          TopLeft="8.83333333333333,5.50000000000004" />
+        <NodeLayout
+          Size="135,43"
+          Id="Package\Sequence Container\Import CSV Data"
+          TopLeft="13.8333333333334,210.833333333334" />
+        <NodeLayout
+          Size="137,43"
+          Id="Package\Sequence Container\Import New Rows"
+          TopLeft="12.8333333333334,313.5" />
+        <NodeLayout
+          Size="152,43"
+          Id="Package\Sequence Container\Truncate Puff_Staging"
+          TopLeft="5.50000000000001,108.166666666667" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="81.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="81.5,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[{2E221E59-EA12-42AE-BE51-D6B9D93E1A9D\}]"
+          TopLeft="81.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="163,411"
+          Size="163,454"
+          Id="Package\Sequence Container"
+          TopLeft="95.5,59.8333333333333" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import CSV Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="234.666666666667,42"
+          Id="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv"
+          TopLeft="20.5,6.86842107838871" />
+        <NodeLayout
+          Size="265.333333333334,42"
+          Id="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="234,42"
+          Id="Package\Sequence Container\Import CSV Data\Data Conversion 0 - 0"
+          TopLeft="21,108.184210539194" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import CSV Data.Paths[Flat File Source Output]"
+          TopLeft="138,48.8684210783887">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.3157894608056"
+              Start="0,0"
+              End="0,51.8157894608056">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.8157894608056" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Import CSV Data.Paths[Data Conversion Output]"
+          TopLeft="138,150.184210539194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.3157894608057"
+              Start="0,0"
+              End="0,51.8157894608057">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.8157894608057" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
