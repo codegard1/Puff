@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="Import Puff Data"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{DC877114-AFBA-4205-A941-D6340BD2720C}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{8C1A9E5B-E88D-468B-BCC8-6876B3DEA7C3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -129,21 +129,6 @@
               DTS:DTSID="{C02140CB-2D6C-44AB-AAC3-E0BC8B5FCD2B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{4EEBC72C-A4B8-41CE-9963-F78BF446BA44}"
-      DTS:ObjectName="DestinationConnectionOLEDB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=CIERVO1;User ID=chris;Initial Catalog=Bills;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=false;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASmiLCSIh00i5Ct8V3DvCUwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA9r7Hyy7MRkMk0XCCGKRTi/heIO/9IajXREZyXa9f6fAAAAAAOgAAAAAIAACAAAACKigyt9gnxuXNcuvrjILr4+dfYuQjlTr206fvKRjyAwRAAAADCWIfkR1xFs2/OmxrI02JfQAAAAEj6r+g5ZmtsllthNVRLH8mwq/oTZmWyd14Ukzt5sAyC7dl8uVustgzMfTrwDupTcEKL90tSD605ZRX/fgc0Wuc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -583,8 +568,8 @@
                   <connections>
                     <connection
                       refId="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                      connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                      connectionManagerID="{4EEBC72C-A4B8-41CE-9963-F78BF446BA44}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinationConnectionOLEDB]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1301,11 +1286,11 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="234.666666666667,42"
+          Size="235,42"
           Id="Package\Sequence Container\Import CSV Data\Source - All Puffs_csv"
           TopLeft="20.5,6.86842107838871" />
         <NodeLayout
-          Size="265.333333333334,42"
+          Size="265,42"
           Id="Package\Sequence Container\Import CSV Data\Destination - Puff_Staging"
           TopLeft="5.50000000000003,209.5" />
         <NodeLayout
