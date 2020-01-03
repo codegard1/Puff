@@ -12,7 +12,7 @@
   <DataSourceViews />
   <DeploymentModelSpecificContent>
     <Manifest>
-      <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
+      <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithPassword" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{a0b4fe81-f397-4134-a394-9b4b53e14ed1}</SSIS:Property>
           <SSIS:Property SSIS:Name="Name">Import Puff Data</SSIS:Property>
@@ -26,12 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SPECTRE</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASmiLCSIh00i5Ct8V3DvCUwAAAAACAAAAAAAQZgAAAAEAACAAAABzuIIbcPGLRjqVT0Ek5gjXdG5BUUUB7muNwFPw2T8TPQAAAAAOgAAAAAIAACAAAABkkgHYRsF0JwsELy0TOBe6BSwIImO2Z3GY8uvClVyRt5AAAAA0bKAL6ApR3S3wscqQfd3yuwqVkxCPg/jdNqRLmxkELMrS9ldijJFwRhufe1PGt+zsNzVqevVbtfMyGJZhzZkfpSYXXXMGczOOlTwo9HqYiEdCnYxLwwjAi2MPwdO5fg8W5A93oXVg15xx8xd6LV4LRCU3NVYdKr4I9b2DCs+4+fYX5G4EFSRnsiMLmvN/CA9AAAAALU4H/4EpWeDFUS7C7N+bImv8N6oLuogSyupDq3iFKLYDWyNUH/7tCMrLoQwm2Ctl5uuYONzKLpI+dWQCPk6Y4Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="H+l6tuJT+4Q=" SSIS:IV="sqxttXGsfyjcVX+u1FOhCQ==" SSIS:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc">2WHP8rnxFwHTwNtrNxkYCCwE5h1Qahya4J5vlK0Po2YP1OC3GsPHLZshNB24OlZmkk8YA0c7M7oNk6lH1A0g1IwwqTEKhYWX4Yix3j66ufv31iGEsWYCLF6sjNGdB6MoURck9Au9KipP7ab9WV+uLi7y22E1mYoThTH+Z2JsvOnKdGpSjhrS9zN2yH8tFbsP</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="Import Puff Data.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Import Puff Data v2.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Import Puff Data (REST).dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Import Puff Data (CSV).dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="DestinationConnectionOLEDB.conmgr" />
@@ -159,20 +159,37 @@
             </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="Import Puff Data.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="Import Puff Data (REST).dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{0A83FE57-4D66-4AC0-B3A8-46405FB21749}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Import Puff Data</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{D815A3E7-1313-422E-87DE-FCB154D7AE22}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Import Puff Data v2</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">24</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8C1A9E5B-E88D-468B-BCC8-6876B3DEA7C3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{50994A95-EA71-4A47-A1A9-A9505D225AD3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Import Puff Data (CSV).dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{E9A9B9F8-5E51-458F-9E5C-4C117B0B83C6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Import Puff Data  CSV</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8DFE11F7-9CBC-403B-91F3-A2199786090D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
                 <SSIS:Parameter SSIS:Name="CM.All Puff CSV.AlwaysCheckForRowDelimiters">
@@ -337,6 +354,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -371,23 +390,6 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Import Puff Data v2.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{D815A3E7-1313-422E-87DE-FCB154D7AE22}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Import Puff Data v2</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C6CC11DE-6B2B-4783-ACBC-4DE93F9D4F9B}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

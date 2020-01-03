@@ -5,14 +5,15 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SPECTRE"
   DTS:CreatorName="SPECTRE\n5014"
-  DTS:DTSID="{0A83FE57-4D66-4AC0-B3A8-46405FB21749}"
+  DTS:DTSID="{E9A9B9F8-5E51-458F-9E5C-4C117B0B83C6}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1900.80"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
-  DTS:ObjectName="Import Puff Data"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{8C1A9E5B-E88D-468B-BCC8-6876B3DEA7C3}">
+  DTS:ObjectName="Import Puff Data  CSV"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{8DFE11F7-9CBC-403B-91F3-A2199786090D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1189,19 +1190,19 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="145,43"
+          Size="145.333333333334,42.6666666666667"
           Id="Package\Sequence Container\Create Puff_Staging"
           TopLeft="8.83333333333333,5.50000000000004" />
         <NodeLayout
-          Size="135,43"
+          Size="134.666666666667,42.6666666666667"
           Id="Package\Sequence Container\Import CSV Data"
           TopLeft="13.8333333333334,210.833333333334" />
         <NodeLayout
-          Size="137,43"
+          Size="137.333333333334,42.6666666666667"
           Id="Package\Sequence Container\Import New Rows"
           TopLeft="12.8333333333334,313.5" />
         <NodeLayout
-          Size="152,43"
+          Size="152,42.6666666666667"
           Id="Package\Sequence Container\Truncate Puff_Staging"
           TopLeft="5.50000000000001,108.166666666667" />
         <EdgeLayout
@@ -1273,8 +1274,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="163,411"
-          Size="163,454"
+          PanelSize="162.666666666667,410.666666666667"
+          Size="162.666666666667,454"
           Id="Package\Sequence Container"
           TopLeft="95.5,59.8333333333333" />
       </GraphLayout>

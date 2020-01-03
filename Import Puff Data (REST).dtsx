@@ -11,8 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import Puff Data v2"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{C6CC11DE-6B2B-4783-ACBC-4DE93F9D4F9B}">
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{50994A95-EA71-4A47-A1A9-A9505D225AD3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
