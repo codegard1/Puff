@@ -1,23 +1,18 @@
--- Import new Puff Data from the staging table
--- Filter based on the most recent Puff (ID) from [dbo].[Puff]
--- This assumes that the staging table is named Puff_Staging
-
-USE Bills;
-GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 -- Create the stored procedure in the specified schema
 CREATE PROCEDURE [dbo].[ImportNewPuffData]
-    --  Name of the Table where staging data is stored
-    @Staging_Table nvarchar(255) = 'Puff_Staging'
 AS
 -- body of the stored procedure
 
 DECLARE @cutoff INT;
 DECLARE @mark NVARCHAR;
 DECLARE @count INT;
+DECLARE @Staging_Table NVARCHAR(50);
+
+SET @Staging_Table = 'Puff_Staging'
 
 -- Get the cutoff ID by which to filter the staging table
 SELECT @cutoff = (
@@ -35,7 +30,7 @@ SELECT @count = (
 )
 
 -- set the transaction description (mark)
-SET @mark = CONCAT(CONCAT('Import new Puff data from ', @Staging_Table), CONCAT(@count, 'rows'))
+SET @mark = CONCAT(CONCAT(@Staging_Table, ': Import new Puff data ('), CONCAT(@count, ' rows)'));
 
 IF (
     EXISTS (SELECT 1
@@ -47,20 +42,20 @@ IF (
 BEGIN TRAN PUFF
     WITH MARK @mark
     INSERT INTO [dbo].[Puff]
-    SELECT
-        [Puff]
-            , [Date_Time]
-            , [Time__s_]
-            , [Energy__mWh_]
-            , [Power__W_]
-            , [Power_Set__W_]
-            , [Cold_Ohms]
-            , [Cold_Temp__degF_]
-            , [Mod_Resistance]
-            , [Room_Temp]
-            , [Board_Temp]
-            , [Snapshot_Ohms]
-    FROM [Bills].[dbo].[Puff_Staging]
-    WHERE [Puff] > @cutoff
-    ORDER BY [Puff] DESC
+SELECT
+    [Puff]
+    , [Date_Time]
+    , [Time_s] as 'Time__s_'
+    , [Energy_mWh] as 'Energy__mWh_'
+    , [Power_W] as 'Power__W_'
+    , [Power_Set_W] as 'Power_Set__W_'
+    , [Cold_Ohms]
+    , [Cold_Temp_degF] as 'Cold_Temp__degF_'
+    , [Mod_Resistance]
+    , [Room_Temp]
+    , [Board_Temp]
+    , [Snapshot_Ohms]
+FROM [Bills].[dbo].[Puff_Staging]
+WHERE [Puff] > @cutoff
+ORDER BY [Puff] DESC
 GO

@@ -1,28 +1,7 @@
--- USE Bills;
--- GO
+USE Puff;
+GO
 
 SET NOCOUNT ON;
-
--- Create a new table called '[Puff_Interval]' in schema '[dbo]'
--- Truncate the table if it already exists
-IF (OBJECT_ID('[dbo].[Puff_Interval]', 'U') IS NOT NULL)
-    BEGIN
-    TRUNCATE TABLE [dbo].[Puff_Interval]
-END
-ELSE
--- Create the table in the specified schema
-BEGIN
-    CREATE TABLE [dbo].[Puff_Interval]
-    (
-        [Id] INT NOT NULL PRIMARY KEY,
-        -- Primary Key column
-        [Interval] INT,
-        [End_Time] DATETIME,
-        [Start_Time] DATETIME,
-        [Previous_Start] DATETIME
-    );
-END
--- `GO`
 
 -- VARIABLES
 DECLARE @current_Puff INT,
