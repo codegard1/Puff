@@ -6,7 +6,7 @@ TRUNCATE TABLE [Puff].dbo.[Puff]
 GO
 INSERT INTO [Puff].dbo.[Puff]
 SELECT *
-FROM [Bills].dbo.[Puff]
+FROM [Puff].dbo.[Puff]
 GO
 
 -- Copy Puff_Interval 
@@ -14,7 +14,7 @@ TRUNCATE TABLE [Puff].dbo.[Puff_Interval]
 GO
 INSERT INTO [Puff].dbo.[Puff_Interval]
 SELECT *
-FROM [Bills].dbo.[Puff_Interval]
+FROM [Puff].dbo.[Puff_Interval]
 GO
 
 -- Copy Puff_Usage
@@ -34,7 +34,7 @@ SELECT
       , [time_mean]
       , [time_per_day]
       , [power_mean]
-FROM [Bills].dbo.[Puff_Usage]
+FROM [Puff].dbo.[Puff_Usage]
 ORDER BY [start_date] 
 GO
 
@@ -43,7 +43,7 @@ TRUNCATE TABLE [Puff].dbo.[Puff_Usage_Staging]
 GO
 INSERT INTO [Puff].dbo.[Puff_Usage_Staging]
 SELECT *
-FROM [Bills].dbo.[Puff_Usage_Staging]
+FROM [Puff].dbo.[Puff_Usage_Staging]
 GO
 
 -- Copy Puff_Staging
@@ -51,5 +51,5 @@ TRUNCATE TABLE [Puff].dbo.[Puff_Staging]
 GO
 INSERT INTO [Puff].dbo.[Puff_Staging]
 SELECT *
-FROM [Bills].dbo.[Puff_Staging]
+FROM [Puff].dbo.[Puff_Staging]
 GO

@@ -1,4 +1,4 @@
-USE Bills 
+USE Puff 
 GO
 
 DECLARE @puff INT

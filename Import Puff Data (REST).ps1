@@ -92,7 +92,7 @@ Class PuffUsage {
 
 # Connection variables
 $ServerInstance = "192.168.1.225" # Plex1
-$Database = "Bills"
+$Database = "Puff"
 If ( $null -eq $Credential ) { $Credential = Get-Credential }  
 
 # Step 1: Truncate the Staging Table
@@ -101,7 +101,7 @@ try {
     -ServerInstance $ServerInstance `
     -Database $Database `
     -Credential $Credential `
-    -Query "TRUNCATE TABLE Bills.dbo.Puff_Staging;" 
+    -Query "TRUNCATE TABLE dbo.Puff_Staging;" 
 
   Write-Host "Truncated Puff_Staging" -ForegroundColor Yellow
 }
@@ -111,7 +111,7 @@ catch {
 }
 
 # Step 2: Get LastId from Puff
-$Query2 = "SELECT TOP 1 puff FROM Bills.dbo.Puff ORDER BY puff DESC;"
+$Query2 = "SELECT TOP 1 puff FROM dbo.Puff ORDER BY puff DESC;"
 $LastId = (Invoke-Sqlcmd2 `
     -ServerInstance $ServerInstance `
     -Database $Database `
@@ -217,8 +217,8 @@ VALUES
 }
 
 
-# Step 5: Merge Staging into Productions (suing a Stored Procedure)
-$Query4 = "EXECUTE [Bills].[dbo].[ImportNewPuffData];"
+# Step 5: Merge Staging into Productions (susng a Stored Procedure)
+$Query4 = "EXECUTE [dbo].[ImportNewPuffData];"
 Invoke-Sqlcmd2 `
   -ServerInstance $ServerInstance `
   -Database $Database `
@@ -228,7 +228,7 @@ Invoke-Sqlcmd2 `
 Write-Host "Inserted $Counter rows into Production"
 
 # Step 6: Recalculate Puff Intervals
-$Query5 = '.\create puff intervals.sql'
+$Query5 = '.\Populate Table Puff_Intervals.sql'
 Invoke-Sqlcmd2 `
   -ServerInstance $ServerInstance `
   -Database $Database `

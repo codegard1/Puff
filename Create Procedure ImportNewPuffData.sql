@@ -55,7 +55,7 @@ SELECT
     , [Room_Temp]
     , [Board_Temp]
     , [Snapshot_Ohms]
-FROM [Bills].[dbo].[Puff_Staging]
+FROM [dbo].[Puff_Staging]
 WHERE [Puff] > @cutoff
 ORDER BY [Puff] DESC
 GO

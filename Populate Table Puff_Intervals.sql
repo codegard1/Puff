@@ -1,6 +1,3 @@
-USE Puff;
-GO
-
 SET NOCOUNT ON;
 
 -- VARIABLES
