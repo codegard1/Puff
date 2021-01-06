@@ -1,5 +1,11 @@
-Import-Module .\Invoke-SqlCmd2
+#Requires -Module Invoke-SqlCmd2
+Install-Module Invoke-SqlCmd2
+Import-Module Invoke-SqlCmd2
 
+# Import-Module ".\Invoke-Parallel\Invoke-Parallel.ps1"
+
+
+# Class Definitions to store REST Data
 Class PuffCollection {
   [Puff[]]$Data
 
@@ -90,8 +96,8 @@ Class PuffUsage {
   }
 }
 
-# Connection variables
-$ServerInstance = "192.168.1.225" # Plex1
+# Connection variable
+$ServerInstance = "192.168.1.207" # Plex1
 $Database = "Puff"
 If ( $null -eq $Credential ) { $Credential = Get-Credential }  
 
@@ -102,7 +108,6 @@ try {
     -Database $Database `
     -Credential $Credential `
     -Query "TRUNCATE TABLE dbo.Puff_Staging;" 
-
   Write-Host "Truncated Puff_Staging" -ForegroundColor Yellow
 }
 catch {
@@ -129,10 +134,13 @@ $Headers = @{
 }
 
 # REST Endpoints
-[String]$PuffsEndpoint = "https://api.ecigstats.org/v1/puffs/?device=pCQ7p42X51z-E66ojGu96Q&format=json&start=$LastId"
-[String]$UsageEndpoint = "https://api.ecigstats.org/v1/usage/?account=current&format=json"
+[String]$PuffsEndpoint = "https://api.ecigstats.org/v1/puffs/?device=pCQ7p42X51z-E66ojGu96Q&format=json&start=$($LastId+1)"
+
+# Usage is deprecated in favor of generating averages in SQL
+# [String]$UsageEndpoint = "https://api.ecigstats.org/v1/usage/?account=current&format=json"
 
 try {
+  # Load the REST data into a PuffCollection 
   $PuffCollection = [PuffCollection]::New((Invoke-RestMethod -Uri $PuffsEndpoint -Headers $Headers).puffs)
 }
 catch {
@@ -140,9 +148,16 @@ catch {
   Break;
 }
 
-Write-Host "Inserting $($PuffCollection.data.Count) rows into Puff_Staging"
-$Counter = 0
 $total = $PuffCollection.data.Count
+$Counter = 0
+
+# Break if there is no new data
+If($Total -eq 0){
+  Write-Host "No new rows. Breaking..." -ForegroundColor Yellow
+  Break;
+}
+
+Write-Host "Inserting $total rows into Puff_Staging"
 
 # Step 4: Import New Rows to Staging
 ForEach ( $row in $PuffCollection.data) {
@@ -201,7 +216,6 @@ VALUES
       -Credential $Credential `
       -Query $Query3 `
       -SqlParameters $SqlParameters `
-  
   }
   catch {
     Continue;
