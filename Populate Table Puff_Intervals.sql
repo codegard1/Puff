@@ -1,3 +1,6 @@
+-- Truncate the destination table
+TRUNCATE TABLE dbo.[Puff_Interval]
+
 SET NOCOUNT ON;
 
 -- VARIABLES
@@ -71,7 +74,7 @@ WHILE @@FETCH_STATUS = 0
 
     -- Increment the counter
     SELECT @counter = @counter + 1;
-    IF (@counter % 420 = 0)
+    IF (@counter % 1024 = 0)
         PRINT 'Rows inserted: ' + CAST(@counter AS varchar);
 
     FETCH NEXT FROM cursor_Puff 
