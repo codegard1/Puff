@@ -97,9 +97,13 @@ Class PuffUsage {
 }
 
 # Connection variable
-$ServerInstance = "192.168.1.207" # Plex1
+$ServerInstance = "192.168.1.207" # SQL2
 $Database = "Puff"
-If ( $null -eq $Credential ) { $Credential = Get-Credential }  
+
+# Get credentials
+$Credential = New-Object -TypeName System.Management.Automation.PSCredential `
+-ArgumentList "chris", (Get-Content "gxddb0v.txt" | ConvertTo-SecureString) 
+If( $null -eq $Credential ) { Write-Error "Invalid Credentials"; Break; }
 
 # Step 1: Truncate the Staging Table
 try {
