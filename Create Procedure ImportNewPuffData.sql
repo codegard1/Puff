@@ -11,16 +11,13 @@ DECLARE @cutoff INT;
 DECLARE @mark NVARCHAR;
 DECLARE @count INT;
 DECLARE @Staging_Table NVARCHAR(50);
+DECLARE @Production_Table NVARCHAR(50);
 
 SET @Staging_Table = 'Puff_Staging'
+SET @Production_Table = 'Puff'
 
 -- Get the cutoff ID by which to filter the staging table
-SELECT @cutoff = (
-    SELECT TOP 1
-        [Puff]
-    FROM [dbo].[Puff]
-    ORDER BY [Puff] DESC 
-)
+SELECT @cutoff = ( SELECT MAX( [Puff] ) FROM [dbo].[Puff] )
 
 --  get the number of rows that can be imported
 SELECT @count = (
@@ -37,12 +34,16 @@ IF (
     FROM INFORMATION_SCHEMA.TABLES
     WHERE TABLE_SCHEMA = 'dbo'
         AND TABLE_NAME = @Staging_Table)
+    AND EXISTS (SELECT 1
+    FROM INFORMATION_SCHEMA.TABLES
+    WHERE TABLE_SCHEMA = 'dbo'
+        AND TABLE_NAME = @Production_Table)
     AND (@count > 0)
 )
 BEGIN TRAN PUFF
     WITH MARK @mark
     INSERT INTO [dbo].[Puff]
-SELECT
+SELECT 
     [Puff]
     , [Date_Time]
     , [Time_s] as 'Time__s_'
@@ -57,5 +58,4 @@ SELECT
     , [Snapshot_Ohms]
 FROM [dbo].[Puff_Staging]
 WHERE [Puff] > @cutoff
-ORDER BY [Puff] DESC
 GO
