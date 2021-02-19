@@ -120,7 +120,7 @@ catch {
 }
 
 # Step 2: Get LastId from Puff
-$Query2 = "SELECT TOP 1 puff FROM dbo.Puff ORDER BY puff DESC;"
+$Query2 = "SELECT MAX(Puff) FROM dbo.Puff;"
 $LastId = (Invoke-Sqlcmd2 `
     -ServerInstance $ServerInstance `
     -Database $Database `
@@ -222,6 +222,7 @@ VALUES
       -SqlParameters $SqlParameters `
   }
   catch {
+    Write-Host $_.Exception.Message -ForegroundColor Red
     Continue;
   }
 
