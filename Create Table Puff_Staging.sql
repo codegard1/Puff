@@ -5,8 +5,12 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+
+DROP TABLE IF EXISTS [dbo].[Puff_Staging]
+GO
+
 CREATE TABLE [dbo].[Puff_Staging](
-	[Puff] [smallint] NOT NULL,
+	[Puff] [int] PRIMARY KEY NOT NULL,
 	[Date_Time] [datetime2](7) NOT NULL,
 	[Time_s] [float] NOT NULL,
 	[Energy_mWh] [float] NOT NULL,
