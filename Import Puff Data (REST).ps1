@@ -97,7 +97,7 @@ Class PuffUsage {
 }
 
 # Connection variable
-$ServerInstance = "192.168.1.207" # SQL2
+$ServerInstance = "sql3.lan"
 $Database = "Puff"
 
 # Get credentials
